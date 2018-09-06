@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bubble sort</title>
+</head>
+<body>
+    <h1>bubble sort</h1>
+
+<script>
+    
+    var bubbleSort = function(arr) {
+        var len = arr.length;
+        for (let i = 0; i < len - 1; i++) {
+            ////当i=0的时候，也就是在第一轮，里面的循环再次完整执行，数组最后一个是最大的数
+            //由于最大的数已经在最后了，没有必要去比较数组的最后两项，因此这里i < len - 1
+            for (let j = 0; j < len - i - 1; j++) {
+                if (arr[j] > arr[j+1]) {
+                    [arr[j], arr[j+1]] = [arr[j+1], arr[j]];//ES6语法，解构赋值
+                }
+                
+            }            
+        }
+        return arr;
+    }
+    var result = bubbleSort([24,12,7,90,400,3]);
+    console.log(result);
+</script>
+</body>
+</html>

@@ -18,7 +18,7 @@ var quickSort = function(arr) {
 	if (arr.length <= 1) {return arr;}
 	//math.floor向下取整，并返回这个数值
 	var pivotIndex = Math.floor(arr.length / 2);
-	//splice返回包含被删元素的数组
+	//删除下标为pivotIndex的元素，splice返回包含被删元素的数组
 	var pivot = arr.splice(pivotIndex,1)[0];
 	var left = [];
 	var right = [];

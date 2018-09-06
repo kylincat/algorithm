@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insertSort</title>
+</head>
+<body>
+    <h1>insertSort</h1>
+
+<script>
+    // 扑克牌思想： 打扑克牌时，摸到一张牌，按顺序插入到手中的牌
+    // 比第一张小，放左边，继续接，可能是中间数，就插在中间....依次
+    // 对整个为排序的数列分为两个部分，一部分是已经排序好的，
+    // 一部分是没有排序好的，每次都从还未排序好的数列中去除一个数，插入到已经排序好的数列之中，直到未排序的数列为零
+    var insertSort = function(arr) {
+        var len = arr.length;
+        for (let i = 1; i < len; i++) {
+            //在排序过程中，一般默认将数列的第一个数作为已经排序好的数列，将剩余作为未排序好的数列
+            //因此外循环i=1
+            for (let j = i; j > 0; j--) {//循环依次跟有序序列比较，交换
+                if (arr[j] < arr[j-1]) {
+                    [arr[j], arr[j-1]] = [arr[j-1], arr[j]]
+                }else {
+                    break;
+                    //因为前面是都是有序的序列，所以如果当前要插入的值arr[j]大于或等于arr[j-1]，
+                    //则无需继续比较，直接下一次循环就可以了
+                }
+                
+            }            
+        }
+        return arr;
+    }
+    var result = insertSort([24,12,7,90,400,3]);
+    console.log(result);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>selectSort</title>
+</head>
+<body>
+    <h1>selectSort</h1>
+
+<script>
+    // 选择排序是从数组的开头开始，将第一个元素和其他元素作比较，
+    // 检查完所有的元素后，最小的放在第一个位置，接下来再开始从第二个元素开始，重复以上一直到最后
+    var selectSort = function(arr) {
+        var len = arr.length;
+        for (let i = 0; i < len - 1; i++) {//最后一个不用比较，故 i < len - 1
+            for (let j = i; j < len; j++) {
+                if (arr[j] < arr[i]) {
+                    [arr[i], arr[j]] = [arr[j], arr[i]]//最小的元素放在当前轮次最前的位置
+                    //arr[i]表示第i+1轮的最前一个元素，
+                    //i=0是第一轮，最前的元素是arr[0]
+                    //i=1是第二轮，最前的元素是arr[1]
+                }
+                
+            }            
+        }
+        return arr;
+    }
+    var result = selectSort([24,12,7,90,400,3]);
+    console.log(result);
+</script>
+</body>
+</html>
